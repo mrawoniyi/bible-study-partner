@@ -1,0 +1,13 @@
+# Your fork is where you actually study, so these are the files that fill with your own life:
+# your faith profile, your running plans and sessions, and your journal entries. None of it
+# should ever reach a commit. The leading slash anchors each pattern to the top level, so the
+# invented worked example under example/ is still committed. Delete these lines only if you are
+# certain you want your prayer journal in version control.
+/profile.md
+/state/
+/journal/
+
+# templates/ and example/ ARE committed. They carry no real data: the example is an invented
+# person, and the templates are empty shapes.
+
+.DS_Store
