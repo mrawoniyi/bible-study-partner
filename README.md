@@ -19,8 +19,8 @@ session is written to a file on your machine, and every later day reads those fi
 
 | Tier | What you get |
 |---|---|
-| **Coding-agent CLIs** — Claude Code, Codex CLI, Gemini CLI, OpenCode | **Best.** The full experience. The agent reads and writes the state files itself, so sessions resume after an interruption and every programme feeds the next one. |
-| **Chat-app projects** — a Claude Project, a custom GPT, a Gemini Gem | **Works for one programme.** No filesystem, so state lives in a single pasteable note (`templates/state-note.md`). You lose automatic resume and long-term feed-forward across programmes. |
+| **Agents with a local folder** — Claude Code, Codex CLI, Gemini CLI, OpenCode, ChatGPT Work in the desktop app with this folder attached | **Best.** The full experience. The agent reads and writes the state files itself, so sessions resume after an interruption and every programme feeds the next one. |
+| **Chat-app projects** — a Claude Project, a custom GPT or ChatGPT on web or mobile, a Gemini Gem | **Works for one programme.** No filesystem, so state lives in a single pasteable note (`templates/state-note.md`). You lose automatic resume and long-term feed-forward across programmes. |
 | **Messaging-bot runtimes** — an agent you already run in a chat app | **Full experience**, if you already have one. State lives on the machine running the bot; you study from your phone. See `adapters/messaging-bots.md`. |
 | **Your own build** — an agent SDK, your own loop | **Full control, most work.** `SKILL.md` is the system prompt; give the model file read and write on this folder. |
 
@@ -36,6 +36,11 @@ npx skills add <your-fork>/bible-study-partner
 
 **Codex CLI, Gemini CLI, OpenCode, and anything else that reads `AGENTS.md`.** Copy the folder
 anywhere and start the agent inside it. `AGENTS.md` points at `SKILL.md`; that is the whole wiring.
+
+**ChatGPT Work (desktop app).** Create a project, attach this folder to it, and add the folder as a
+skill (it is already in the `SKILL.md` shape ChatGPT expects). ChatGPT can read and change files in
+an attached folder, so `state/` and `journal/` work as on the CLIs. On web and mobile there is no
+folder access, so use the chat-app steps below instead.
 
 **Chat apps.** Paste the contents of `SKILL.md` into the project's custom instructions. Keep
 `templates/state-note.md` somewhere you can copy from, paste it at the start of each session, and
